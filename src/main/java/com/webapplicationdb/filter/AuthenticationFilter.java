@@ -28,7 +28,6 @@ public class AuthenticationFilter implements Filter {
         String path = httpRequest.getServletPath();
         String userRole = SessionUtil.getUserRole(httpRequest);
         
-        // Allow access to public paths
         if (isPublicPath(path)) {
             chain.doFilter(request, response);
             return;
